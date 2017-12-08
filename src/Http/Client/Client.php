@@ -8,9 +8,9 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Http\Client;
+namespace Webjump\CreditallSDK\Http\Client;
 
-use Webjump\Creditall_SDK\Http\Client\ClientAbstract;
+use Webjump\CreditallSDK\Http\Client\ClientAbstract;
 
 class Client extends ClientAbstract
 {

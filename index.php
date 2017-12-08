@@ -1,7 +1,7 @@
 <?php
 require_once("vendor/autoload.php");
 
-use Webjump\Creditall_SDK\Resource\CreditallFacade;
+use Webjump\CreditallSDK\Resource\CreditallFacade;
 
 $creditalFacade = new CreditallFacade();
 //

@@ -8,9 +8,9 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Factories;
+namespace Webjump\CreditallSDK\Factories;
 
-use Webjump\Creditall_SDK\Http\Client\Client;
+use Webjump\CreditallSDK\Http\Client\Client;
 
 class ClientHttpFactory
 {

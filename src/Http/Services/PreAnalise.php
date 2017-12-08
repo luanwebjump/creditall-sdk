@@ -8,10 +8,10 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Http\Service;
+namespace Webjump\CreditallSDK\Http\Service;
 
-use Webjump\Creditall_SDK\Http\Client\ClientAbstract;
-use Webjump\Creditall_SDK\Factories\ClientHttpFactory;
+use Webjump\CreditallSDK\Http\Client\ClientAbstract;
+use Webjump\CreditallSDK\Factories\ClientHttpFactory;
 
 class PreAnalise extends ClientAbstract
 {

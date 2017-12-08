@@ -8,7 +8,7 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Resource\Preanalise;
+namespace Webjump\CreditallSDK\Resource\Preanalise;
 
 class Response
 {

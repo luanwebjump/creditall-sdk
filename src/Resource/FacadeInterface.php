@@ -8,7 +8,7 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Resource;
+namespace Webjump\CreditallSDK\Resource;
 
 interface FacadeInterface
 {

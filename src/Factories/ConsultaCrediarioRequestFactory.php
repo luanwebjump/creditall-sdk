@@ -8,9 +8,9 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Factories;
+namespace Webjump\CreditallSDK\Factories;
 
-use Webjump\Creditall_SDK\Http\Service\ConsultaCrediario;
+use Webjump\CreditallSDK\Http\Service\ConsultaCrediario;
 
 class ConsultaCrediarioRequestFactory
 {

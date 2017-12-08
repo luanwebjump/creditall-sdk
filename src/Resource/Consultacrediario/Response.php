@@ -8,7 +8,7 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Resource\Consultacrediario;
+namespace Webjump\CreditallSDK\Resource\Consultacrediario;
 
 class Response
 {

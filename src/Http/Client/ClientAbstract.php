@@ -8,7 +8,7 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Http\Client;
+namespace Webjump\CreditallSDK\Http\Client;
 
 
 abstract class ClientAbstract

@@ -8,17 +8,17 @@
  *
  */
 
-namespace Webjump\Creditall_SDK\Resource;
+namespace Webjump\CreditallSDK\Resource;
 
-use Webjump\Creditall_SDK\Resource\FacadeInterface;
+use Webjump\CreditallSDK\Resource\FacadeInterface;
 
-use Webjump\Creditall_SDK\Factories\PreAnaliseDataRequestFactory;
-use Webjump\Creditall_SDK\Factories\PreAnaliseRequestFactory;
-use Webjump\Creditall_SDK\Factories\PreAnaliseDataResponseFactory;
+use Webjump\CreditallSDK\Factories\PreAnaliseDataRequestFactory;
+use Webjump\CreditallSDK\Factories\PreAnaliseRequestFactory;
+use Webjump\CreditallSDK\Factories\PreAnaliseDataResponseFactory;
 
-use Webjump\Creditall_SDK\Factories\ConsultaCrediarioDataRequestFactory;
-use Webjump\Creditall_SDK\Factories\ConsultaCrediarioRequestFactory;
-use Webjump\Creditall_SDK\Factories\ConsultaCrediarioDataResponseFactory;
+use Webjump\CreditallSDK\Factories\ConsultaCrediarioDataRequestFactory;
+use Webjump\CreditallSDK\Factories\ConsultaCrediarioRequestFactory;
+use Webjump\CreditallSDK\Factories\ConsultaCrediarioDataResponseFactory;
 
 
 class CreditallFacade implements FacadeInterface
