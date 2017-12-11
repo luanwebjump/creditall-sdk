@@ -8,7 +8,7 @@
  *
  */
 
-namespace Webjump\CreditallSDK\Http\Service;
+namespace Webjump\CreditallSDK\Http\Services;
 
 use Webjump\CreditallSDK\Http\Client\ClientAbstract;
 use Webjump\CreditallSDK\Factories\ClientHttpFactory;

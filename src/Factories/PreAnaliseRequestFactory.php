@@ -10,7 +10,7 @@
 
 namespace Webjump\CreditallSDK\Factories;
 
-use Webjump\CreditallSDK\Http\Service\PreAnalise;
+use Webjump\CreditallSDK\Http\Services\PreAnalise;
 
 class PreAnaliseRequestFactory
 {
