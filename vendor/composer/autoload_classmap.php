@@ -6,21 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Webjump\\CreditallSDK\\Factories\\ClientHttpFactory' => $baseDir . '/src/Factories/ClientHttpFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\ConsultaCrediarioDataRequestFactory' => $baseDir . '/src/Factories/ConsultaCrediarioDataRequestFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\ConsultaCrediarioDataResponseFactory' => $baseDir . '/src/Factories/ConsultaCrediarioDataResponseFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\ConsultaCrediarioRequestFactory' => $baseDir . '/src/Factories/ConsultaCrediarioRequestFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\PreAnaliseDataRequestFactory' => $baseDir . '/src/Factories/PreAnaliseDataRequestFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\PreAnaliseDataResponseFactory' => $baseDir . '/src/Factories/PreAnaliseDataResponseFactory.php',
-    'Webjump\\CreditallSDK\\Factories\\PreAnaliseRequestFactory' => $baseDir . '/src/Factories/PreAnaliseRequestFactory.php',
-    'Webjump\\CreditallSDK\\Http\\Client\\Client' => $baseDir . '/src/Http/Client/Client.php',
-    'Webjump\\CreditallSDK\\Http\\Client\\ClientAbstract' => $baseDir . '/src/Http/Client/ClientAbstract.php',
-    'Webjump\\CreditallSDK\\Http\\Service\\ConsultaCrediario' => $baseDir . '/src/Http/Services/ConsultaCrediario.php',
-    'Webjump\\CreditallSDK\\Http\\Service\\PreAnalise' => $baseDir . '/src/Http/Services/PreAnalise.php',
-    'Webjump\\CreditallSDK\\Resource\\Consultacrediario\\Request' => $baseDir . '/src/Resource/Consultacrediario/Request.php',
-    'Webjump\\CreditallSDK\\Resource\\Consultacrediario\\Response' => $baseDir . '/src/Resource/Consultacrediario/Response.php',
-    'Webjump\\CreditallSDK\\Resource\\CreditallFacade' => $baseDir . '/src/Resource/CreditallFacade.php',
-    'Webjump\\CreditallSDK\\Resource\\FacadeInterface' => $baseDir . '/src/Resource/FacadeInterface.php',
-    'Webjump\\CreditallSDK\\Resource\\Preanalise\\Request' => $baseDir . '/src/Resource/Preanalise/Request.php',
-    'Webjump\\CreditallSDK\\Resource\\Preanalise\\Response' => $baseDir . '/src/Resource/Preanalise/Response.php',
 );

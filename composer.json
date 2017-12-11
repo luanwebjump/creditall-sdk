@@ -1,7 +1,7 @@
 {
     "name": "webjump/creditall-sdk",
     "description": "SDK Creditall",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "keywords": [
         "creditall"
     ],
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Webjump\\CreditallSDK\\": ""
+            "Webjump\\CreditallSDK\\": "src/"
         }
     }
 }

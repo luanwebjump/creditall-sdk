@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Webjump\\CreditallSDK\\' => array($baseDir . '/'),
+    'Webjump\\CreditallSDK\\' => array($baseDir . '/src'),
 );
