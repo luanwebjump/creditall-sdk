@@ -20,6 +20,7 @@ class Client extends ClientAbstract
 
         $xml_user_info = new \SimpleXMLElement($this->getObjectXml());
         $this->array_to_xml($data, $xml_user_info);
+        $paramRequest = $xml_user_info->asXML();
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -30,7 +31,7 @@ class Client extends ClientAbstract
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $method,
-            CURLOPT_POSTFIELDS => $xml_user_info->asXML(),
+            CURLOPT_POSTFIELDS => $paramRequest,
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
             ),
@@ -42,9 +43,9 @@ class Client extends ClientAbstract
         curl_close($curl);
 
         if ($err) {
-            return "cURL Error #:" . $err;
+            return ['request' => $paramRequest, 'response' => "cURL Error #:" . $err];
         } else {
-            return $response;
+            return ['request' => $paramRequest, 'response' => $response];
         }
     }
 

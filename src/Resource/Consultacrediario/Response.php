@@ -13,11 +13,35 @@ namespace Webjump\CreditallSDK\Resource\Consultacrediario;
 class Response
 {
     private $data = '';
+    private $response = '';
+    private $request = '';
 
     public function __construct($data)
     {
-        $this->setData($data);
+        $this->setResponse($data['response']);
+        $this->setRequest($data['request']);
+        $this->setData($data['response']);
         $this->_convertReturn();
+    }
+
+    protected function setResponse($item)
+    {
+        $this->response = $item;
+    }
+
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    public function setRequest($item)
+    {
+        $this->request = $item;
+    }
+
+    public function getRequest()
+    {
+        return $this->request;
     }
 
     public function setData($data)

@@ -13,11 +13,35 @@ namespace Webjump\CreditallSDK\Resource\Preanalise;
 class Response
 {
     private $data = '';
+    private $response = '';
+    private $request = '';
 
     public function __construct($data)
     {
-        $this->setData($data);
+        $this->setResponse($data['response']);
+        $this->setRequest($data['request']);
+        $this->setData($data['response']);
         $this->_convertReturn();
+    }
+
+    protected function setResponse($item)
+    {
+        $this->response = $item;
+    }
+
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    protected function setRequest($item)
+    {
+        $this->request = $item;
+    }
+
+    public function getRequest()
+    {
+        return $this->request;
     }
 
     public function setData($data)
@@ -25,14 +49,14 @@ class Response
         $this->data = $data;
     }
 
-    protected function getData()
+    public function getData()
     {
         return $this->data;
     }
 
     public function validateReturn()
     {
-        if (count($this->getData()->MENSAGEM) > 0) {
+        if (count($this->getData()->Erros) > 0) {
             return false;
         }
         return true;
@@ -40,8 +64,12 @@ class Response
 
     public function getMessageFail()
     {
+        $message = [];
         if (!$this->validateReturn()) {
-            return $this->getData()->MENSAGEM;
+            foreach ($this->getData()->Erros as $item) {
+                $message[] = $item;
+            }
+            return implode('/n', $message);
         }
         return false;
     }

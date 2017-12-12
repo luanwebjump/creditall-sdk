@@ -23,7 +23,7 @@ class PreAnalise extends ClientAbstract
     /**
      * PreAnalise constructor.
      */
-    public function __construct($dataRequest)
+    public function __construct()
     {
         $this->clientHttp = ClientHttpFactory::make();
         $this->clientHttp->setService(self::SERVICE_PREANALISE);

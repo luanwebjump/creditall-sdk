@@ -15,6 +15,10 @@ class Request
     private $validateDataKeys = ['login', 'token', 'cpfcnpj', 'usuario', 'cep', 'cmc7', 'tipoconsulta'];
     private $dataRequest = '';
 
+    /**
+     * Request constructor.
+     * @param array $data
+     */
     public function __construct($data)
     {
         $this->setData($data);
