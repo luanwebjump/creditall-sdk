@@ -39,8 +39,7 @@ class CreditallFacade implements FacadeInterface
         try {
             $dataRequest = ConsultaCrediarioDataRequestFactory::make($data);
             $return = ConsultaCrediarioRequestFactory::make($dataRequest);
-            return $return;
-//            return ConsultaCrediarioResponseFactory::make($return);
+            return ConsultaCrediarioDataResponseFactory::make($return);
         } catch (\Exception $e) {
             return $e->getMessage();
         }

@@ -44,7 +44,7 @@ class Request
 
     public function prepareParams()
     {
-        $this->validateData($this->getData());
+//        $this->validateData($this->getData());
 //        $this->setData($this->organizeKeys($this->getData()));
         return $this->getData();
     }
@@ -66,13 +66,12 @@ class Request
         foreach ($this->validateDataKeys as $keys) {
             if (!$this->validateKeysExists($data, $keys)) {
                 $valid = false;
-                $keysproblem = $keys;
+                $keysproblem[] = $keys;
             }
         }
 
         if (!$valid) {
-            var_dump($keysproblem);
-            throw new \Exception('non-standard data');
+            throw new \Exception('non-standard data'.implode(' ',$keysproblem));
         }
         return true;
     }

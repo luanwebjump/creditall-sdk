@@ -56,7 +56,7 @@ class Response
 
     public function validateReturn()
     {
-        if (count($this->getData()->MENSAGEM) > 0) {
+        if (count($this->getData()->Erros) > 0) {
             return false;
         }
         return true;
@@ -64,8 +64,12 @@ class Response
 
     public function getMessageFail()
     {
+        $retorno = array();
         if (!$this->validateReturn()) {
-            return $this->getData()->MENSAGEM;
+            foreach ($this->getData()->Erros as $item) {
+                $retorno[] = $item->Erro;
+            }
+            return implode(' ,', $retorno);
         }
         return false;
     }
@@ -78,78 +82,41 @@ class Response
         return false;
     }
 
-    public function getSituacao()
-    {
+    public function getNumeroAprovacao(){
+        if ($this->validateReturn()) {
+            return $this->getData()->Numero_Aprovacao;
+        }
+        return false;
+    }
+
+    public function getDate(){
+        if ($this->validateReturn()) {
+            return $this->getData()->Data.' '.$this->getData()->Hora;
+        }
+        return false;
+    }
+
+    public function getStatus(){
+        if ($this->validateReturn()) {
+            return $this->getData()->Status;
+        }
+        return false;
+    }
+
+    public function getSituacao(){
         if ($this->validateReturn()) {
             return $this->getData()->Situacao;
         }
         return false;
     }
 
-    public function getNome()
+    public function getMensagem()
     {
         if ($this->validateReturn()) {
-            return $this->getData()->Nome;
+            return $this->getData()->Mensagem;
         }
         return false;
     }
-
-    public function getCnfCnpj()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->CpfCnpj;
-        }
-        return false;
-    }
-
-    public function getDataNascimento()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Data_Nascimento;
-        }
-        return false;
-    }
-
-    public function getLimiteMaximo()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Limite_Maximo;
-        }
-        return false;
-    }
-
-    public function getLimiteParcela()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Limite_Parcela;
-        }
-        return false;
-    }
-
-    public function getDebitosCreditall()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Debitos_Creditall;
-        }
-        return false;
-    }
-
-    public function getLimiteSaldo()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Limite_Saldo;
-        }
-        return false;
-    }
-
-    public function getLimiteSaldoParcela()
-    {
-        if ($this->validateReturn()) {
-            return $this->getData()->Limite_Saldo_Parcela;
-        }
-        return false;
-    }
-
     protected function _convertReturn()
     {
         $this->setData(simplexml_load_string($this->getData()));

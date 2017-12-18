@@ -67,9 +67,9 @@ class Response
         $message = [];
         if (!$this->validateReturn()) {
             foreach ($this->getData()->Erros as $item) {
-                $message[] = $item;
+                $message[] = $item->Erro;
             }
-            return implode('/n', $message);
+            return implode(' ,', $message);
         }
         return false;
     }
