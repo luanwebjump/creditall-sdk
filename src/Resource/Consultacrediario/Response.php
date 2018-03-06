@@ -56,7 +56,7 @@ class Response
 
     public function validateReturn()
     {
-        if (count($this->getData()->Erros) > 0) {
+        if (count($this->getData()->Erros) > 0 OR current($this->getData()->Dados->Situacao) == "NEGADO") {
             return false;
         }
         return true;
@@ -66,9 +66,14 @@ class Response
     {
         $retorno = array();
         if (!$this->validateReturn()) {
+            if (current($this->getData()->Dados->Situacao) == "NEGADO") {
+                return current($this->getData()->Dados->Mensagem);
+            }
+
             foreach ($this->getData()->Erros as $item) {
                 $retorno[] = $item->Erro;
             }
+            
             return implode(' ,', $retorno);
         }
         return false;
