@@ -78,8 +78,7 @@ class Response
     public function validateReturn()
     {
         $data = $this->getData();
-        if (count($data->Erros) > 0 || (is_array($data->Dados->Situacao)
-                && current($data->Dados->Situacao) == "NEGADO")
+        if (count($data->Erros) > 0 || (current($data->Dados->Situacao) == "NEGADO")
         ) {
             return false;
         }
@@ -94,7 +93,7 @@ class Response
         $retorno = array();
         $data = $this->getData();
         if (!$this->validateReturn()) {
-            if (is_array($data->Dados->Situacao) && current($data->Dados->Situacao) == "NEGADO") {
+            if (current($data->Dados->Situacao) == "NEGADO") {
                 return current($data->Dados->Mensagem);
             }
 
