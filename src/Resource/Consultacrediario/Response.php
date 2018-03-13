@@ -24,61 +24,92 @@ class Response
         $this->_convertReturn();
     }
 
+    /**
+     * @param $item
+     */
     protected function setResponse($item)
     {
         $this->response = $item;
     }
 
+    /**
+     * @return string
+     */
     public function getResponse()
     {
         return $this->response;
     }
 
+    /**
+     * @param $item
+     */
     public function setRequest($item)
     {
         $this->request = $item;
     }
 
+    /**
+     * @return string
+     */
     public function getRequest()
     {
         return $this->request;
     }
 
+    /**
+     * @param $data
+     */
     public function setData($data)
     {
         $this->data = $data;
     }
 
+    /**
+     * @return string
+     */
     protected function getData()
     {
         return $this->data;
     }
 
+    /**
+     * @return bool
+     */
     public function validateReturn()
     {
-        if (count($this->getData()->Erros) > 0 OR current($this->getData()->Dados->Situacao) == "NEGADO") {
+        $data = $this->getData();
+        if (count($data->Erros) > 0 || (is_array($data->Dados->Situacao)
+                && current($data->Dados->Situacao) == "NEGADO")
+        ) {
             return false;
         }
         return true;
     }
 
+    /**
+     * @return bool|mixed|string
+     */
     public function getMessageFail()
     {
         $retorno = array();
+        $data = $this->getData();
         if (!$this->validateReturn()) {
-            if (current($this->getData()->Dados->Situacao) == "NEGADO") {
-                return current($this->getData()->Dados->Mensagem);
+            if (is_array($data->Dados->Situacao) && current($data->Dados->Situacao) == "NEGADO") {
+                return current($data->Dados->Mensagem);
             }
 
-            foreach ($this->getData()->Erros as $item) {
+            foreach ($data->Erros as $item) {
                 $retorno[] = $item->Erro;
             }
-            
+
             return implode(' ,', $retorno);
         }
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function getNumeroControle()
     {
         if ($this->validateReturn()) {
@@ -87,6 +118,9 @@ class Response
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function getNumeroAprovacao(){
         if ($this->validateReturn()) {
             return $this->getData()->Numero_Aprovacao;
@@ -94,6 +128,9 @@ class Response
         return false;
     }
 
+    /**
+     * @return bool|string
+     */
     public function getDate(){
         if ($this->validateReturn()) {
             return $this->getData()->Data.' '.$this->getData()->Hora;
@@ -101,6 +138,9 @@ class Response
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function getStatus(){
         if ($this->validateReturn()) {
             return $this->getData()->Status;
@@ -108,6 +148,9 @@ class Response
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function getSituacao(){
         if ($this->validateReturn()) {
             return $this->getData()->Situacao;
@@ -115,6 +158,9 @@ class Response
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function getMensagem()
     {
         if ($this->validateReturn()) {
@@ -122,6 +168,7 @@ class Response
         }
         return false;
     }
+
     protected function _convertReturn()
     {
         $this->setData(simplexml_load_string($this->getData()));
