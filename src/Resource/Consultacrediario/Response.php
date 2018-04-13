@@ -93,16 +93,19 @@ class Response
         $retorno = array();
         $data = $this->getData();
         if (!$this->validateReturn()) {
-            if (current($data->Dados->Situacao) == "NEGADO") {
+            if (!empty($data->Dados->Situacao) && current($data->Dados->Situacao) == "NEGADO") {
                 return current($data->Dados->Mensagem);
             }
 
-            foreach ($data->Erros as $item) {
-                $retorno[] = $item->Erro;
+            if (!empty($data->Erros)) {
+                foreach ($data->Erros as $item) {
+                    $retorno[] = $item->Erro;
+                }
             }
 
             return implode(' ,', $retorno);
         }
+        
         return false;
     }
 
