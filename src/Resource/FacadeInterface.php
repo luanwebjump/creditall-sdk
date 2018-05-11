@@ -5,9 +5,7 @@
  * @license     http://www.webjump.com.br  Copyright
  *
  * @link        http://www.webjump.com.br
- *
  */
-
 namespace Webjump\CreditallSDK\Resource;
 
 interface FacadeInterface
@@ -15,4 +13,6 @@ interface FacadeInterface
     public function sendPreAnalise($request);
 
     public function sendConsultaCrediario($request);
+
+    public function sendCadastroCrediario($request);
 }
