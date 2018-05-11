@@ -36,14 +36,6 @@ class Request
                 ]
             ],
             'Email'
-        ],
-        'Compra' => [
-            'CodigoControle',
-            'Segmento',
-            'Valor',
-            'ValorTotal',
-            'Parcelas',
-            'VencimentoPrimeiraParcela'
         ]
     ];
 
