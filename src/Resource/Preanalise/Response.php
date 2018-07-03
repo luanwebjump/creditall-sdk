@@ -156,6 +156,10 @@ class Response
 
     protected function _convertReturn()
     {
-        $this->setData(simplexml_load_string($this->getData()));
+        $xml = $this->getData();
+        $pattern = ["#&#is"];
+        $xml = preg_replace($pattern, "", $xml);
+
+        $this->setData(simplexml_load_string($xml));
     }
 }
